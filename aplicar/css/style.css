@@ -1,0 +1,129 @@
+/* Estilo geral do corpo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Criar o fundo com estrelas */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Adiciona as estrelas ao fundo */
+.stars::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, white 1px, transparent 2px);
+    background-size: 4px 4px;
+    animation: sparkle 1.5s infinite alternate;
+}
+
+/* Animação das estrelas piscando */
+@keyframes sparkle {
+    0% {
+        background: radial-gradient(circle, white 1px, transparent 2px);
+    }
+    100% {
+        background: radial-gradient(circle, white 2px, transparent 3px);
+    }
+}
+
+/* Estiliza a div de saudações */
+.greetings {
+    margin-top: 20vh;
+    font-size: 4rem;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Estiliza os spans dentro da div de saudações */
+.greetings span {
+    margin: 0 0.1em;
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+}
+
+/* Adiciona um atraso à animação de cada span para criar um efeito de onda */
+.greetings span:nth-child(1) {
+    animation-delay: 0s;
+}
+.greetings span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.greetings span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.greetings span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+.greetings span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+.greetings span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+/* Define a animação para os spans dentro da div de saudações */
+@keyframes pulse {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Estiliza a div de descrição */
+.description {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+/* Estiliza o botão */
+.button {
+    margin-top: 30px;
+}
+
+.button a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button a:hover {
+    background-color: white;
+    color: black;
+}
